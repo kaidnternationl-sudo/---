@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بورصة باتريوت - تأمين الطلاب الدوليين</title>
+    <title>Patriot Exchange - International Student Insurance</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-top">
             <div class="container">
@@ -17,71 +16,40 @@
                     <div class="bar"></div>
                     <div class="bar"></div>
                 </div>
-                <div class="logo">
+                <div class="logo" onclick="window.location.href='index.html'">
                     <div class="logo-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <div class="logo-text">
-                        <h1>بـورصـة باتريوت</h1>
-                        <p>PATRIOT EXCHANGE</p>
+                        <h1>PATRIOT EXCHANGE</h1>
+                        <p>International Student Insurance</p>
                     </div>
                 </div>
                 <div class="progress-bar">
-                    <div class="progress-fill"></div>
+                    <div class="progress-fill" style="width: 30%;"></div>
                 </div>
             </div>
         </div>
 
-        <!-- القائمة الجانبية -->
         <div class="side-menu" id="sideMenu">
             <div class="menu-header">
-                <h2><i class="fas fa-bars"></i> قائمة طعام</h2>
+                <h2>Menu</h2>
                 <button class="close-menu" id="closeMenu">&times;</button>
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li>
-                        <a href="#" class="nav-link">
-                            <span class="nav-text">نوع التأشيرة / البرنامج</span>
-                            <i class="nav-arrow">></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link">
-                            <span class="nav-text">تأمين</span>
-                            <i class="nav-arrow">></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link">
-                            <span class="nav-text">مركز الموارد</span>
-                            <i class="nav-arrow">></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link">
-                            <span class="nav-text">إبحث عن مدرستك</span>
-                            <i class="nav-arrow">></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link">
-                            <span class="nav-text">إدارة خطتي</span>
-                            <i class="nav-arrow">></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link">
-                            <span class="nav-text">اتصل بنا</span>
-                            <i class="nav-arrow">></i>
-                        </a>
-                    </li>
+                    <li><a href="#" class="nav-link"><span class="nav-text">Visa Type / Program</span><i class="nav-arrow">></i></a></li>
+                    <li><a href="#" class="nav-link"><span class="nav-text">Insurance</span><i class="nav-arrow">></i></a></li>
+                    <li><a href="#" class="nav-link"><span class="nav-text">Resource Center</span><i class="nav-arrow">></i></a></li>
+                    <li><a href="#" class="nav-link"><span class="nav-text">Find Your School</span><i class="nav-arrow">></i></a></li>
+                    <li><a href="#" class="nav-link"><span class="nav-text">Manage My Plan</span><i class="nav-arrow">></i></a></li>
+                    <li><a href="#" class="nav-link"><span class="nav-text">Contact Us</span><i class="nav-arrow">></i></a></li>
                 </ul>
             </nav>
             <div class="language-selector-menu">
                 <select id="language-select-menu">
-                    <option value="ar">العربية</option>
                     <option value="en">English</option>
+                    <option value="ar">العربية</option>
                     <option value="es">Español</option>
                 </select>
             </div>
@@ -89,264 +57,123 @@
         <div class="overlay" id="overlay"></div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container">
+    <main class="container" id="main-form">
         <section class="form-section">
             <div class="form-container">
-                <!-- معلومات مقدم الطلب -->
-                <div class="form-group-section">
-                    <h3 class="section-title">
-                        مـعـلـومـات مـقـدِم الـطـلـب
-                        <span class="required-star">*</span>
-                    </h3>
-                    <div class="form-group">
-                        <label for="email">
-                            بـريـد إلـكـتـرونـي
-                            <span class="required-star">*</span>
-                        </label>
-                        <input type="email" id="email" name="email" required placeholder="أدخل بريدك الإلكتروني">
-                    </div>
-                </div>
-
-                <!-- الوجهة الأساسية -->
-                <div class="form-group-section">
-                    <h3 class="section-title">الـوجـهـة الأسـاسـيـة</h3>
-                    <div class="form-group">
-                        <label for="destination">اخـتـر واحـدا</label>
-                        <select id="destination" name="destination" required>
-                            <option value="">-- اختر الوجهة --</option>
-                            <option value="usa">الولايات المتحدة الأمريكية</option>
-                            <option value="uk">المملكة المتحدة</option>
-                            <option value="canada">كندا</option>
-                            <option value="australia">أستراليا</option>
-                            <option value="germany">ألمانيا</option>
-                            <option value="france">فرنسا</option>
-                            <option value="italy">إيطاليا</option>
-                            <option value="spain">إسبانيا</option>
-                            <option value="japan">اليابان</option>
-                            <option value="china">الصين</option>
-                        </select>
-                    </div>
-                    <p class="form-note">يغطيك برنامج التأمين دوليًا، خارج بلدك. الوجهة الرئيسية هي لأغراض إعلامية فقط.</p>
-                </div>
-
-                <!-- تاريخ الميلاد -->
-                <div class="form-group-section">
-                    <h3 class="section-title">تـاريـخ الـمـيـلاد</h3>
-                    <div class="form-group">
-                        <input type="date" id="birth-date" name="birth-date" required>
-                    </div>
-                </div>
-
-                <!-- تواريخ التغطية -->
-                <div class="form-group-section">
-                    <h3 class="section-title">تـواريـخ الـتـغـطـيـة</h3>
-                    
-                    <div class="form-subgroup">
-                        <h4 class="sub-title">تـاريـخ بـدء الـتـغـطـيـة</h4>
+                <form id="insurance-form">
+                    <div class="form-group-section">
+                        <h3 class="section-title">Applicant Information<span class="required-star">*</span></h3>
                         <div class="form-group">
-                            <input type="date" id="start-date" name="start-date" required>
+                            <label for="email">Email Address<span class="required-star">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email">
                         </div>
-                        <p class="form-note">لا يجوز أن يتجاوز هذا التاريخ ستة أشهر من اليوم.</p>
                     </div>
 
-                    <div class="form-subgroup">
-                        <h4 class="sub-title">تـاريـخ الانـتـهـاء</h4>
+                    <div class="form-group-section">
+                        <h3 class="section-title">Primary Destination</h3>
                         <div class="form-group">
-                            <input type="date" id="end-date" name="end-date" required>
-                        </div>
-                        <p class="form-note">لا يمكن أن يتجاوز هذا التاريخ 12 شهرًا من تاريخ بـدء التغطية.</p>
-                    </div>
-
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="dependent-coverage" name="dependent-coverage">
-                        <label for="dependent-coverage">نعم، أحتاج إلى تغطية تابعة.</label>
-                    </div>
-                </div>
-
-                <!-- خيارات التغطية -->
-                <div class="form-group-section">
-                    <h3 class="section-title">خـيـارات الـتـغـطـيـة</h3>
-                    
-                    <div class="form-subgroup">
-                        <h4 class="sub-title">ريـاضـات الـمـغـامـرة</h4>
-                        <div class="form-group">
-                            <select id="adventure-sports" name="adventure-sports" required>
-                                <option value="">اخـتـر واحـداً</option>
-                                <option value="basic">التغطية الأساسية للمغامرات</option>
-                                <option value="premium">التغطية المتقدمة للمغامرات</option>
+                            <label for="destination">Select One</label>
+                            <select id="destination" name="destination" required>
+                                <option value="">-- Select Destination --</option>
+                                <option value="usa">USA</option>
+                                <option value="uk">UK</option>
+                                <option value="canada">Canada</option>
                             </select>
                         </div>
-                        <div class="info-box">
-                            <p>بطاقة راكبي رياضات المغامرات متاحة للمشاركين المؤهلين: يمكن تغطية بعض الأنشطة المصنفة كرياضات مغامرة حتى الحد الأقصى الذي يحدده العمر. بعض الأنشطة لا تغطى أبدًا، سواءً تم إصدار بطاقة راكبي رياضات المغامرات أم لا.</p>
-                        </div>
+                        <p class="form-note">Your insurance program covers you internationally, outside your home country. The primary destination is for informational purposes only.</p>
                     </div>
-                </div>
 
-                <!-- إضافة إضافية -->
-                <div class="form-group-section">
-                    <h3 class="section-title">إضـافـة إضـافـيـة</h3>
-                    <div class="form-group">
-                        <select id="additional-coverage" name="additional-coverage" required>
-                            <option value="">اخـتـر واحـداً</option>
-                            <option value="baggage">حماية الأمتعة</option>
-                            <option value="legal">المساعدة القانونية</option>
-                            <option value="sports">الرياضات المدرسية</option>
-                        </select>
-                    </div>
-                    <div class="info-box">
-                        <p>توفر هذه الإضافة مزايا لحماية الأمتعة، والمساعدة القانونية، والمسؤولية الشخصية، والرياضات المدرسية. يمكنك عند الحاجة، إضافة تغطية لحوادث الاصطدام الرياضية.</p>
-                    </div>
-                </div>
-
-                <!-- نوع التأشيرة والبرنامج -->
-                <div class="form-group-section">
-                    <h3 class="section-title">نـوع الـتـأشـيـرة والـبـرنـامـج</h3>
-                    
-                    <div class="form-subgroup">
-                        <h4 class="sub-title">نـوع الـتـأشـيـرة</h4>
-                        <div class="radio-group-container">
-                            <div class="radio-group">
-                                <input type="radio" id="visa-f" name="visa-type" value="f" checked>
-                                <label for="visa-f">تأشيرة F</label>
-                            </div>
-                            <div class="radio-group">
-                                <input type="radio" id="visa-j" name="visa-type" value="j">
-                                <label for="visa-j">تأشيرة J</label>
-                            </div>
-                            <div class="radio-group">
-                                <input type="radio" id="visa-optional" name="visa-type" value="optional">
-                                <label for="visa-optional">اختياري</label>
-                            </div>
-                            <div class="radio-group">
-                                <input type="radio" id="visa-m" name="visa-type" value="m">
-                                <label for="visa-m">تأشيرة M</label>
-                            </div>
+                    <div class="form-group-section">
+                        <h3 class="section-title">Date of Birth</h3>
+                        <div class="form-group">
+                            <input type="date" id="birth-date" name="birth-date" required>
                         </div>
                     </div>
 
-                    <div class="form-subgroup">
-                        <h4 class="sub-title">بـرنـامـج</h4>
-                        <div class="radio-group-container">
-                            <div class="radio-group">
-                                <input type="radio" id="program-study" name="program-type" value="study-abroad" checked>
-                                <label for="program-study">تأمين الدراسة في الخارج</label>
+                    <div class="form-group-section">
+                        <h3 class="section-title">Coverage Dates</h3>
+                        
+                        <div class="form-subgroup">
+                            <h4 class="sub-title">Start Date</h4>
+                            <div class="form-group">
+                                <input type="date" id="start-date" name="start-date" required>
                             </div>
-                            <div class="radio-group">
-                                <input type="radio" id="program-dependents" name="program-type" value="dependents">
-                                <label for="program-dependents">تأمين المعالين</label>
+                            <p class="form-note">This date may not exceed six months from today.</p>
+                        </div>
+
+                        <div class="form-subgroup">
+                            <h4 class="sub-title">End Date</h4>
+                            <div class="form-group">
+                                <input type="date" id="end-date" name="end-date" required>
                             </div>
-                            <div class="radio-group">
-                                <input type="radio" id="program-highschool" name="program-type" value="high-school">
-                                <label for="program-highschool">تأمين المدرسة الثانوية</label>
+                            <p class="form-note">This date cannot exceed 12 months from the coverage start date.</p>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="dependent-coverage" name="dependent-coverage">
+                            <label for="dependent-coverage">Yes, I need dependent coverage.</label>
+                        </div>
+
+                        <div class="form-subgroup dependent-select-group" id="dependent-select-group" style="display: none;">
+                            <h4 class="sub-title">Select Dependents</h4>
+                            <div class="form-group">
+                                <select id="dependent-type" name="dependent-type">
+                                    <option value="spouse">Spouse</option>
+                                    <option value="child">Child</option>
+                                    <option value="children">Children</option>
+                                </select>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- الحصول على عرض أسعار -->
-                <div class="form-group-section">
-                    <button type="submit" class="submit-btn">
-                        <span class="btn-text">احـصـل على عـرض أسـعـار</span>
-                        <i class="fas fa-arrow-left btn-arrow"></i>
-                    </button>
-                    <p class="form-note">*من خلال تقديم بريدك الإلكتروني، فإنك توافق على تلقي رسائل البريد الإلكتروني منا.</p>
-                </div>
+                    <div class="form-group-section">
+                        <button type="submit" class="submit-btn" id="get-quote-btn">
+                            <span class="btn-text">GET A QUOTE</span>
+                            <i class="fas fa-arrow-right btn-arrow"></i>
+                        </button>
+                        <p class="form-note">*By submitting your email, you agree to receive emails from us.</p>
+                    </div>
+                </form>
             </div>
-
-            <!-- قسم المساعدة -->
-            <div class="help-section">
-                <h3 class="help-title">
-                    <i class="fas fa-question-circle"></i>
-                    هل تحتاج إلى مساعدة؟
-                </h3>
-                <div class="contact-options">
-                    <div class="contact-option">
-                        <i class="fas fa-phone"></i>
-                        <span>مباشر: +1 (904) 758-4391</span>
-                    </div>
-                    <div class="contact-option">
-                        <i class="fas fa-envelope"></i>
-                        <span>بريد إلكتروني</span>
-                    </div>
-                    <div class="contact-option">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>واتساب</span>
-                    </div>
-                    <div class="contact-option">
-                        <i class="fas fa-comments"></i>
-                        <span>محادثة</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- قسم المساعدة للتطبيق -->
-            <div class="app-help-section">
-                <h3 class="help-title">هل تحتاج إلى مساعدة؟؟</h3>
-                <div class="help-buttons">
-                    <button class="help-btn">
-                        <i class="fas fa-phone"></i>
-                        اتصل للتقديم
-                    </button>
-                    <button class="help-btn">
-                        <i class="fas fa-envelope"></i>
-                        راسلنا عبر البريد الإلكتروني
-                    </button>
-                </div>
-                <div class="contact-info">
-                    <p class="contact-title">تأمين الطلاب الدوليين</p>
-                    <p class="contact-address">224 شارع فيرست، سانت أوغسطين، فلوريدا 32084، الولايات المتحدة الأمريكية</p>
-                </div>
-            </div>
-        </section>
+            
+            </section>
     </main>
 
-    <!-- Footer -->
+    <main class="container" id="checkout-page" style="display: none;">
+        <section class="checkout-section">
+            <h2 class="checkout-title">Proceed to Checkout</h2>
+            <div class="checkout-container">
+                <div class="price-summary">
+                    <h3>Your Quote Summary</h3>
+                    <p>Total Estimated Premium: <span>$1,250.00 USD</span></p>
+                    <p>Coverage Dates: <span>Jan 1, 2026 - Jan 1, 2027</span></p>
+                </div>
+                
+                <div class="payment-details">
+                    <h3>Payment Information</h3>
+                    <div class="form-group">
+                        <label for="card-number">Card Number</label>
+                        <input type="text" id="card-number" placeholder="**** **** **** ****">
+                    </div>
+                    <div class="form-group">
+                        <label for="name-on-card">Name on Card</label>
+                        <input type="text" id="name-on-card" placeholder="JOHN DOE">
+                    </div>
+                    <button class="submit-btn" id="purchase-btn">
+                        <span class="btn-text">COMPLETE PURCHASE</span>
+                        <i class="fas fa-lock btn-arrow"></i>
+                    </button>
+                </div>
+            </div>
+            <p class="form-note">This is a mock checkout page to simulate the purchase process.</p>
+        </section>
+    </main>
+    
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>للأفراد</h3>
-                    <ul>
-                        <li><a href="#">التأمين الصحي للطلاب</a></li>
-                        <li><a href="#">تأمين السفر الطبي</a></li>
-                        <li><a href="#">طب الأسنان والرؤية</a></li>
-                        <li><a href="#">الطب الرئيسي</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>للشركاء</h3>
-                    <ul>
-                        <li><a href="#">الإداريين</a></li>
-                        <li><a href="#">السماسرة</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>نظرة عامة على المنتج</h3>
-                    <ul>
-                        <li><a href="#">نظرة عامة على الخطة</a></li>
-                        <li><a href="#">مركز المعرفة</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>موارد</h3>
-                    <ul>
-                        <li><a href="#">حول ISI</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>معلومات عنا</h3>
-                    <ul>
-                        <li><a href="#">تعرف على الفريق</a></li>
-                    </ul>
-                </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 بورصة باتريوت - جميع الحقوق محفوظة</p>
-            </div>
-        </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-    </html>
+</html>
