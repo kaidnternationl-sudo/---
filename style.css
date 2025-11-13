@@ -9,6 +9,7 @@
     --border-color: #d1d9e6;
     --white: #ffffff;
     --success: #28a745;
+    --background: #1a4b8c;
 }
 
 * {
@@ -19,8 +20,8 @@
 }
 
 body {
-    background-color: #f5f7fa;
-    color: var(--text-dark);
+    background-color: var(--background);
+    color: var(--white);
     line-height: 1.6;
 }
 
@@ -42,8 +43,7 @@ header {
 .header-top {
     background-color: var(--primary-blue);
     color: var(--white);
-    padding: 8px 0;
-    font-size: 0.9rem;
+    padding: 15px 0;
 }
 
 .header-top .container {
@@ -52,75 +52,110 @@ header {
     align-items: center;
 }
 
-.contact-info {
+/* قائمة الهامبرغر */
+.hamburger-menu {
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    justify-content: space-between;
 }
 
-.contact-info a {
+.hamburger-menu .bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.logo h1 {
     color: var(--white);
-    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 .language-selector select {
     background: transparent;
     color: var(--white);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 4px 8px;
+    padding: 8px 12px;
     border-radius: 4px;
+    font-size: 1rem;
 }
 
 .language-selector option {
     color: var(--text-dark);
 }
 
-.main-header {
-    padding: 15px 0;
+/* القائمة الجانبية */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: var(--white);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
 }
 
-.main-header .container {
+.side-menu.active {
+    right: 0;
+}
+
+.menu-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px;
+    background-color: var(--primary-blue);
+    color: var(--white);
 }
 
-.logo {
+.menu-header h2 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.close-menu {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
     display: flex;
-    flex-direction: column;
-}
-
-.logo h1 {
-    color: var(--primary-blue);
-    font-size: 1.8rem;
-    font-weight: 700;
-}
-
-.logo p {
-    color: var(--secondary-blue);
-    font-size: 0.9rem;
-    margin-top: -5px;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-nav ul {
-    display: flex;
     list-style: none;
-    gap: 25px;
+    padding: 0;
 }
 
-.main-nav a {
-    text-decoration: none;
+.main-nav li {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-link {
+    display: block;
+    padding: 15px 20px;
     color: var(--text-dark);
+    text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
 }
 
-.main-nav a:hover {
+.nav-link:hover, .nav-link.active {
+    background-color: var(--light-blue);
     color: var(--primary-blue);
-}
-
-.main-nav a.active {
-    color: var(--primary-blue);
-    font-weight: 600;
 }
 
 /* Form Section */
@@ -142,6 +177,13 @@ header {
     padding-bottom: 15px;
     border-bottom: 1px solid var(--border-color);
     font-size: 1.5rem;
+    text-align: center;
+}
+
+.section-title {
+    color: var(--secondary-blue);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
 }
 
 .form-group {
@@ -163,6 +205,7 @@ header {
     border-radius: 4px;
     font-size: 1rem;
     transition: border-color 0.3s;
+    color: var(--text-dark);
 }
 
 .form-group input:focus,
@@ -195,6 +238,7 @@ header {
 .radio-group label {
     margin-bottom: 0;
     font-weight: normal;
+    color: var(--text-dark);
 }
 
 .info-box {
@@ -228,53 +272,6 @@ header {
 
 .submit-btn:hover {
     background-color: var(--dark-blue);
-}
-
-/* Help Section */
-.help-section {
-    background-color: var(--white);
-    border-radius: 8px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    padding: 25px;
-}
-
-.help-title {
-    color: var(--primary-blue);
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 1.3rem;
-}
-
-.contact-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.contact-option {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px 15px;
-    background-color: var(--light-blue);
-    border-radius: 6px;
-    transition: transform 0.3s;
-}
-
-.contact-option:hover {
-    transform: translateY(-5px);
-}
-
-.contact-icon {
-    font-size: 1.8rem;
-    color: var(--primary-blue);
-    margin-bottom: 10px;
-}
-
-.contact-option p {
-    font-weight: 600;
-    color: var(--text-dark);
 }
 
 /* Footer */
@@ -328,6 +325,43 @@ footer {
     color: var(--white);
 }
 
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #c2d4f0;
+    text-decoration: none;
+    transition: color 0.3s;
+    padding: 8px 0;
+}
+
+.contact-link:hover {
+    color: var(--white);
+}
+
+.contact-link i {
+    font-size: 1.2rem;
+    width: 20px;
+}
+
+.contact-link.whatsapp i {
+    color: #25D366;
+}
+
+.contact-link.phone i {
+    color: var(--accent-blue);
+}
+
+.contact-link.email i {
+    color: #EA4335;
+}
+
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
@@ -338,42 +372,40 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 992px) {
-    .main-nav ul {
-        gap: 15px;
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
     .header-top .container {
-        flex-direction: column;
-        gap: 10px;
+        padding: 0 20px;
     }
     
-    .main-header .container {
-        flex-direction: column;
-        gap: 15px;
+    .logo h1 {
+        font-size: 1.5rem;
     }
     
-    .main-nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .contact-options {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 576px) {
     .form-container {
         padding: 20px;
     }
     
-    .contact-options {
-        grid-template-columns: 1fr;
-    }
-    
     .footer-content {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .side-menu {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .form-container {
+        padding: 15px;
+    }
+    
+    .contact-methods {
+        gap: 10px;
     }
 }
