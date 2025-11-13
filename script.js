@@ -1,22 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
     // التحكم في القائمة الجانبية
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
     const sideMenu = document.getElementById('sideMenu');
     const closeMenu = document.getElementById('closeMenu');
+    const overlay = document.getElementById('overlay');
     
-    hamburgerMenu.addEventListener('click', function() {
+    function openSideMenu() {
         sideMenu.classList.add('active');
-    });
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
     
-    closeMenu.addEventListener('click', function() {
+    function closeSideMenu() {
         sideMenu.classList.remove('active');
-    });
+        overlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
     
-    // إغلاق القائمة عند النقر خارجها
-    document.addEventListener('click', function(event) {
-        if (!sideMenu.contains(event.target) && !hamburgerMenu.contains(event.target)) {
-            sideMenu.classList.remove('active');
-        }
+    hamburgerMenu.addEventListener('click', openSideMenu);
+    closeMenu.addEventListener('click', closeSideMenu);
+    overlay.addEventListener('click', closeSideMenu);
+    
+    // إغلاق القائمة عند النقر على رابط
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeSideMenu);
     });
 
     // تحديد تواريخ البدء والانتهاء
@@ -47,23 +55,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // تغيير اللغة
-    const languageSelect = document.getElementById('language-select');
-    languageSelect.addEventListener('change', function() {
-        // في التطبيق الحقيقي، سيتم تغيير اللغة باستخدام مكتبة الترجمة
-        alert('سيتم تغيير اللغة إلى: ' + (this.value === 'ar' ? 'العربية' : 'English'));
+    // تغيير اللغة في القائمة
+    const languageSelectMenu = document.getElementById('language-select-menu');
+    languageSelectMenu.addEventListener('change', function() {
+        const languages = {
+            'ar': 'العربية',
+            'en': 'English',
+            'es': 'Español'
+        };
+        alert(`تم تغيير اللغة إلى: ${languages[this.value]}`);
     });
     
     // التحقق من صحة النموذج قبل الإرسال
-    const insuranceForm = document.getElementById('insurance-form');
+    const insuranceForm = document.querySelector('.form-container');
     insuranceForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
         // التحقق من أن تاريخ البدء والانتهاء صالحان
         if (startDateInput.value && endDateInput.value) {
             const startDate = new Date(startDateInput.value);
             const endDate = new Date(endDateInput.value);
             
             if (endDate <= startDate) {
-                e.preventDefault();
                 alert('يجب أن يكون تاريخ الانتهاء بعد تاريخ البدء');
                 return;
             }
@@ -72,14 +85,30 @@ document.addEventListener('DOMContentLoaded', function() {
                               (endDate.getMonth() - startDate.getMonth());
             
             if (diffMonths > 12) {
-                e.preventDefault();
                 alert('لا يمكن أن تتجاوز مدة التغطية 12 شهرًا');
                 return;
             }
         }
         
         // إظهار رسالة نجاح
-        alert('تم إرسال طلبك بنجاح! سيتم التواصل معك قريبًا عبر البريد الإلكتروني.');
+        showSuccessMessage();
+    });
+    
+    // إضافة تفاعلية لأزرار المساعدة
+    const contactOptions = document.querySelectorAll('.contact-option');
+    contactOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            const type = this.querySelector('span').textContent.trim();
+            handleContactClick(type);
+        });
+    });
+    
+    const helpButtons = document.querySelectorAll('.help-btn');
+    helpButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const type = this.textContent.trim();
+            handleHelpClick(type);
+        });
     });
     
     // دالة مساعدة لتنسيق التاريخ بصيغة YYYY-MM-DD
@@ -90,17 +119,102 @@ document.addEventListener('DOMContentLoaded', function() {
         return `${year}-${month}-${day}`;
     }
     
+    // معالجة نقرات التواصل
+    function handleContactClick(type) {
+        switch(type) {
+            case 'مباشر: +1 (904) 758-4391':
+                window.open('tel:+19047584391');
+                break;
+            case 'بريد إلكتروني':
+                window.location.href = 'mailto:info@patriotexchange.com';
+                break;
+            case 'واتساب':
+                window.open('https://wa.me/966580422371');
+                break;
+            case 'محادثة':
+                // افتح نافذة الدردشة
+                alert('سيتم فتح نافذة الدردشة قريباً');
+                break;
+        }
+    }
+    
+    // معالجة نقرات المساعدة
+    function handleHelpClick(type) {
+        switch(type) {
+            case 'اتصل للتقديم':
+                window.open('tel:+19047584391');
+                break;
+            case 'راسلنا عبر البريد الإلكتروني':
+                window.location.href = 'mailto:info@patriotexchange.com';
+                break;
+        }
+    }
+    
+    // عرض رسالة النجاح
+    function showSuccessMessage() {
+        const successHTML = `
+            <div class="success-message">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>تم إرسال طلبك بنجاح!</h3>
+                <p>سيتم التواصل معك قريبًا عبر البريد الإلكتروني</p>
+                <button class="success-btn" onclick="closeSuccessMessage()">موافق</button>
+            </div>
+            <div class="success-overlay"></div>
+        `;
+        
+        document.body.insertAdjacentHTML('beforeend', successHTML);
+        
+        // إضافة الأنيميشن
+        setTimeout(() => {
+            document.querySelector('.success-message').classList.add('show');
+            document.querySelector('.success-overlay').classList.add('show');
+        }, 100);
+    }
+    
+    // إغلاق رسالة النجاح (يتم تعريفها بشكل عام للوصول من HTML)
+    window.closeSuccessMessage = function() {
+        const successMessage = document.querySelector('.success-message');
+        const successOverlay = document.querySelector('.success-overlay');
+        
+        if (successMessage) {
+            successMessage.classList.remove('show');
+            successOverlay.classList.remove('show');
+            
+            setTimeout(() => {
+                successMessage.remove();
+                successOverlay.remove();
+            }, 300);
+        }
+    };
+    
     // إضافة تأثيرات إضافية للتحسينات البصرية
     const formInputs = document.querySelectorAll('input, select');
     formInputs.forEach(input => {
         input.addEventListener('focus', function() {
-            this.style.borderColor = 'var(--accent-blue)';
-            this.style.boxShadow = '0 0 0 2px rgba(58, 134, 214, 0.2)';
+            this.parentElement.classList.add('focused');
         });
         
         input.addEventListener('blur', function() {
-            this.style.borderColor = 'var(--border-color)';
-            this.style.boxShadow = 'none';
+            this.parentElement.classList.remove('focused');
         });
     });
+    
+    // إضافة أنيميشن لشريط التقدم
+    function animateProgressBar() {
+        const progressFill = document.querySelector('.progress-fill');
+        let width = 30;
+        const interval = setInterval(() => {
+            if (width >= 80) {
+                clearInterval(interval);
+            } else {
+                width += Math.random() * 5;
+                progressFill.style.width = Math.min(width, 80) + '%';
+            }
+        }, 200);
+    }
+    
+    // بدء أنيميشن شريط التقدم بعد تحميل الصفحة
+    setTimeout(animateProgressBar, 1000);
 });
