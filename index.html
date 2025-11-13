@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بورصة باتريوت - تأمين الطلاب الدوليين</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                    <a href="tel:+19047584391"><i class="fas fa-phone"></i> +1 (904) 758-4391</a>
+                    <a href="mailto:info@patriotexchange.com"><i class="fas fa-envelope"></i> البريد الإلكتروني</a>
+                </div>
+                <div class="language-selector">
+                    <select id="language-select">
+                        <option value="ar">العربية</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <h1>بورصة باتريوت</h1>
+                    <p>PATRIOT EXCHANGE</p>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#" class="active">الرئيسية</a></li>
+                        <li><a href="#">التأمين الصحي للطلاب</a></li>
+                        <li><a href="#">تأمين السفر الطبي</a></li>
+                        <li><a href="#">طب الأسنان والرؤية</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="form-section">
+            <div class="form-container">
+                <h2 class="form-title">طلب تأمين الطلاب الدوليين</h2>
+                
+                <form id="insurance-form" action="https://formspree.io/f/xldadgze" method="POST">
+                    <!-- معلومات مقدم الطلب -->
+                    <div class="form-group">
+                        <h3 style="color: var(--secondary-blue); margin-bottom: 15px;">معلومات مقدم الطلب</h3>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="full-name">الاسم الكامل *</label>
+                            <input type="text" id="full-name" name="full-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="birth-date">تاريخ الميلاد *</label>
+                            <input type="date" id="birth-date" name="birth-date" required>
+                        </div>
+                    </div>
+
+                    <!-- الوجهة الأساسية -->
+                    <div class="form-group">
+                        <h3 style="color: var(--secondary-blue); margin-bottom: 15px;">الوجهة الأساسية</h3>
+                        <p class="form-note">يغطي برنامج التأمين دوليًا، خارج بلدك. الوجهة الرئيسية هي لأغراض إعلامية فقط.</p>
+                        <div class="form-group">
+                            <label for="destination">اختر الوجهة *</label>
+                            <select id="destination" name="destination" required>
+                                <option value="">-- اختر الوجهة --</option>
+                                <option value="usa">الولايات المتحدة الأمريكية</option>
+                                <option value="uk">المملكة المتحدة</option>
+                                <option value="canada">كندا</option>
+                                <option value="australia">أستراليا</option>
+                                <option value="germany">ألمانيا</option>
+                                <option value="france">فرنسا</option>
+                                <option value="other">دولة أخرى</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- تواريخ التغطية -->
+                    <div class="form-group">
+                        <h3 style="color: var(--secondary-blue); margin-bottom: 15px;">تواريخ التغطية</h3>
+                        <div class="form-group">
+                            <label for="start-date">تاريخ بدء التغطية *</label>
+                            <input type="date" id="start-date" name="start-date" required>
+                            <p class="form-note">لا يجوز أن يتجاوز هذا التاريخ ستة أشهر من اليوم.</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="end-date">تاريخ الانتهاء *</label>
+                            <input type="date" id="end-date" name="end-date" required>
+                            <p class="form-note">لا يمكن أن يتجاوز هذا التاريخ 12 شهرًا من تاريخ بدء التغطية.</p>
+                        </div>
+                    </div>
+
+                    <!-- التغطية التابعة -->
+                    <div class="form-group">
+                        <h3 style="color: var(--secondary-blue); margin-bottom: 15px;">التغطية التابعة</h3>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="dependent-coverage" name="dependent-coverage">
+                            <label for="dependent-coverage">نعم، أحتاج إلى تغطية تابعة.</label>
+                        </div>
+                    </div>
+
+                    <!-- خيارات التغطية -->
+                    <div class="form-group">
+                        <h3 style="color: var(--secondary-blue); margin-bottom: 15px;">خيارات التغطية</h3>
+                        <div class="radio-group">
+                            <input type="radio" id="basic-coverage" name="coverage-type" value="basic" checked>
+                            <label for="basic-coverage">التغطية الأساسية</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="premium-coverage" name="coverage-type" value="premium">
+                            <label for="premium-coverage">التغطية الممتازة</label>
+                        </div>
+                    </div>
+
+                    <!-- رياضات المقامرة -->
+                    <div class="form-group">
+                        <h3 style="color: var(--secondary-blue); margin-bottom: 15px;">رياضات المقامرة</h3>
+                        <div class="radio-group">
+                            <input type="radio" id="gambling-sports-yes" name="gambling-sports" value="yes">
+                            <label for="gambling-sports-yes">نعم، أمارس رياضات المقامرة</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="gambling-sports-no" name="gambling-sports" value="no" checked>
+                            <label for="gambling-sports-no">لا، لا أمارس رياضات المقامرة</label>
+                        </div>
+                        <div class="info-box">
+                            <p>بطاقة راكبي رياضات المقامرات متاحة للمشاركين المؤهلين: يمكن تغطية بعض الأنشطة المصنفة كرياضات مقامرات حتى الحد الأقصى الذي يحدده العمر. بعض الأنشطة لا تغطى أبدًا، سواءً تم إصدار بطاقة راكبي رياضات المقامرات أم لا. للاطلاع على قائمة الأنشطة التي تعتبر رياضات مقامرات، يُرجى التواصل معنا.</p>
+                        </div>
+                    </div>
+
+                    <!-- إضافة إضافية -->
+                    <div class="form-group">
+                        <h3 style="color: var(--secondary-blue); margin-bottom: 15px;">إضافة إضافية</h3>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="additional-coverage" name="additional-coverage">
+                            <label for="additional-coverage">إضافة تغطية إضافية</label>
+                        </div>
+                        <div class="info-box">
+                            <p>توفر هذه الإضافة مزايا لحماية الأمتعة، والمساعدة القانونية، والمسؤولية الشخصية، والرياضات المدرسية. يمكنك عند الحاجة، إضافة تغطية لحوادث الاصطدام الرياضية.</p>
+                        </div>
+                    </div>
+
+                    <!-- نوع التأشيرة -->
+                    <div class="form-group">
+                        <h3 style="color: var(--secondary-blue); margin-bottom: 15px;">نوع التأشيرة / البرنامج</h3>
+                        <div class="form-group">
+                            <label for="visa-type">نوع التأشيرة *</label>
+                            <select id="visa-type" name="visa-type" required>
+                                <option value="">-- اختر نوع التأشيرة --</option>
+                                <option value="f">تأشيرة F</option>
+                                <option value="j">تأشيرة J</option>
+                                <option value="m">تأشيرة M</option>
+                                <option value="optional">اختياري</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="program-type">نوع البرنامج *</label>
+                            <select id="program-type" name="program-type" required>
+                                <option value="">-- اختر نوع البرنامج --</option>
+                                <option value="study-abroad">تأمين الدراسة في الخارج</option>
+                                <option value="visitors">تأمين الزوار</option>
+                                <option value="high-school">تأمين المدرسة الثانوية</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- الحصول على عرض أسعار -->
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agree-terms" name="agree-terms" required>
+                            <label for="agree-terms">من خلال تقديم بريدك الإلكتروني، فإنك توافق على تلقي رسائل البريد الإلكتروني منا.</label>
+                        </div>
+                        <button type="submit" class="submit-btn">احصل على عرض أسعار</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- قسم المساعدة -->
+            <div class="help-section">
+                <h3 class="help-title">هل تحتاج إلى مساعدة؟</h3>
+                <div class="contact-options">
+                    <div class="contact-option">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <p>مباشر: +1 (904) 758-4391</p>
+                    </div>
+                    <div class="contact-option">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <p>بريد إلكتروني</p>
+                    </div>
+                    <div class="contact-option">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <p>واتساب</p>
+                    </div>
+                    <div class="contact-option">
+                        <div class="contact-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <p>محادثة</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>أنواع التأمين</h3>
+                    <ul>
+                        <li><a href="#">التأمين الصحي للطلاب</a></li>
+                        <li><a href="#">تأمين السفر الطبي</a></li>
+                        <li><a href="#">طب الأسنان والرؤية</a></li>
+                        <li><a href="#">الطب الرئيسي</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>للشركاء</h3>
+                    <ul>
+                        <li><a href="#">الإداريين</a></li>
+                        <li><a href="#">السمستر</a></li>
+                        <li><a href="#">نظرة عامة على المنتج</a></li>
+                        <li><a href="#">نظرة عامة على الخطة</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>الموارد</h3>
+                    <ul>
+                        <li><a href="#">مركز المعرفة</a></li>
+                        <li><a href="#">موارد</a></li>
+                        <li><a href="#">حول ISI</a></li>
+                        <li><a href="#">معلومات إضافية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>اتصل بنا</h3>
+                    <ul>
+                        <li><a href="#">تعرف على الفريق</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">ابحث عن مدرستك</a></li>
+                        <li><a href="#">إدارة خطتي</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 بورصة باتريوت - جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
