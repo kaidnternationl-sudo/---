@@ -1,4 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // التحكم في القائمة الجانبية
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const sideMenu = document.getElementById('sideMenu');
+    const closeMenu = document.getElementById('closeMenu');
+    
+    hamburgerMenu.addEventListener('click', function() {
+        sideMenu.classList.add('active');
+    });
+    
+    closeMenu.addEventListener('click', function() {
+        sideMenu.classList.remove('active');
+    });
+    
+    // إغلاق القائمة عند النقر خارجها
+    document.addEventListener('click', function(event) {
+        if (!sideMenu.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+            sideMenu.classList.remove('active');
+        }
+    });
+
     // تحديد تواريخ البدء والانتهاء
     const startDateInput = document.getElementById('start-date');
     const endDateInput = document.getElementById('end-date');
@@ -74,11 +94,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const formInputs = document.querySelectorAll('input, select');
     formInputs.forEach(input => {
         input.addEventListener('focus', function() {
-            this.parentElement.classList.add('focused');
+            this.style.borderColor = 'var(--accent-blue)';
+            this.style.boxShadow = '0 0 0 2px rgba(58, 134, 214, 0.2)';
         });
         
         input.addEventListener('blur', function() {
-            this.parentElement.classList.remove('focused');
+            this.style.borderColor = 'var(--border-color)';
+            this.style.boxShadow = 'none';
         });
     });
 });
