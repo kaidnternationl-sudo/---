@@ -12,9 +12,13 @@
     <header>
         <div class="header-top">
             <div class="container">
-                <div class="contact-info">
-                    <a href="tel:+19047584391"><i class="fas fa-phone"></i> +1 (904) 758-4391</a>
-                    <a href="mailto:info@patriotexchange.com"><i class="fas fa-envelope"></i> البريد الإلكتروني</a>
+                <div class="hamburger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div class="logo">
+                    <h1>بورصة باتريوت</h1>
                 </div>
                 <div class="language-selector">
                     <select id="language-select">
@@ -24,22 +28,24 @@
                 </div>
             </div>
         </div>
-        <div class="main-header">
-            <div class="container">
-                <div class="logo">
-                    <h1>بورصة باتريوت</h1>
-                    <p>PATRIOT EXCHANGE</p>
-                </div>
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="#" class="active">الرئيسية</a></li>
-                        <li><a href="#">التأمين الصحي للطلاب</a></li>
-                        <li><a href="#">تأمين السفر الطبي</a></li>
-                        <li><a href="#">طب الأسنان والرؤية</a></li>
-                        <li><a href="#">اتصل بنا</a></li>
-                    </ul>
-                </nav>
+
+        <!-- القائمة الجانبية -->
+        <div class="side-menu" id="sideMenu">
+            <div class="menu-header">
+                <h2>القائمة الرئيسية</h2>
+                <button class="close-menu" id="closeMenu">&times;</button>
             </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="nav-link active">نوع التأشيرة / البرنامج</a></li>
+                    <li><a href="#" class="nav-link">تأمين</a></li>
+                    <li><a href="#" class="nav-link">مركز الموارد</a></li>
+                    <li><a href="#" class="nav-link">إبحث عن مدرستك</a></li>
+                    <li><a href="#" class="nav-link">إدارة خطتي</a></li>
+                    <li><a href="#" class="nav-link">اتصل بنا</a></li>
+                    <li><a href="#" class="nav-link">الأسئلة الشائعة</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -52,7 +58,7 @@
                 <form id="insurance-form" action="https://formspree.io/f/xldadgze" method="POST">
                     <!-- معلومات مقدم الطلب -->
                     <div class="form-group">
-                        <h3 style="color: var(--secondary-blue); margin-bottom: 15px;">معلومات مقدم الطلب</h3>
+                        <h3 class="section-title">معلومات مقدم الطلب</h3>
                         <div class="form-group">
                             <label for="email">البريد الإلكتروني *</label>
                             <input type="email" id="email" name="email" required>
@@ -69,7 +75,7 @@
 
                     <!-- الوجهة الأساسية -->
                     <div class="form-group">
-                        <h3 style="color: var(--secondary-blue); margin-bottom: 15px;">الوجهة الأساسية</h3>
+                        <h3 class="section-title">الوجهة الأساسية</h3>
                         <p class="form-note">يغطي برنامج التأمين دوليًا، خارج بلدك. الوجهة الرئيسية هي لأغراض إعلامية فقط.</p>
                         <div class="form-group">
                             <label for="destination">اختر الوجهة *</label>
@@ -81,6 +87,41 @@
                                 <option value="australia">أستراليا</option>
                                 <option value="germany">ألمانيا</option>
                                 <option value="france">فرنسا</option>
+                                <option value="italy">إيطاليا</option>
+                                <option value="spain">إسبانيا</option>
+                                <option value="netherlands">هولندا</option>
+                                <option value="sweden">السويد</option>
+                                <option value="norway">النرويج</option>
+                                <option value="denmark">الدنمارك</option>
+                                <option value="finland">فنلندا</option>
+                                <option value="switzerland">سويسرا</option>
+                                <option value="austria">النمسا</option>
+                                <option value="belgium">بلجيكا</option>
+                                <option value="ireland">أيرلندا</option>
+                                <option value="newzealand">نيوزيلندا</option>
+                                <option value="japan">اليابان</option>
+                                <option value="southkorea">كوريا الجنوبية</option>
+                                <option value="singapore">سنغافورة</option>
+                                <option value="malaysia">ماليزيا</option>
+                                <option value="uae">الإمارات العربية المتحدة</option>
+                                <option value="qatar">قطر</option>
+                                <option value="saudiarabia">المملكة العربية السعودية</option>
+                                <option value="china">الصين</option>
+                                <option value="india">الهند</option>
+                                <option value="brazil">البرازيل</option>
+                                <option value="mexico">المكسيك</option>
+                                <option value="argentina">الأرجنتين</option>
+                                <option value="chile">تشيلي</option>
+                                <option value="southafrica">جنوب أفريقيا</option>
+                                <option value="egypt">مصر</option>
+                                <option value="turkey">تركيا</option>
+                                <option value="poland">بولندا</option>
+                                <option value="czech">جمهورية التشيك</option>
+                                <option value="hungary">المجر</option>
+                                <option value="portugal">البرتغال</option>
+                                <option value="greece">اليونان</option>
+                                <option value="russia">روسيا</option>
+                                <option value="ukraine">أوكرانيا</option>
                                 <option value="other">دولة أخرى</option>
                             </select>
                         </div>
@@ -88,7 +129,7 @@
 
                     <!-- تواريخ التغطية -->
                     <div class="form-group">
-                        <h3 style="color: var(--secondary-blue); margin-bottom: 15px;">تواريخ التغطية</h3>
+                        <h3 class="section-title">تواريخ التغطية</h3>
                         <div class="form-group">
                             <label for="start-date">تاريخ بدء التغطية *</label>
                             <input type="date" id="start-date" name="start-date" required>
@@ -103,7 +144,7 @@
 
                     <!-- التغطية التابعة -->
                     <div class="form-group">
-                        <h3 style="color: var(--secondary-blue); margin-bottom: 15px;">التغطية التابعة</h3>
+                        <h3 class="section-title">التغطية التابعة</h3>
                         <div class="checkbox-group">
                             <input type="checkbox" id="dependent-coverage" name="dependent-coverage">
                             <label for="dependent-coverage">نعم، أحتاج إلى تغطية تابعة.</label>
@@ -112,7 +153,7 @@
 
                     <!-- خيارات التغطية -->
                     <div class="form-group">
-                        <h3 style="color: var(--secondary-blue); margin-bottom: 15px;">خيارات التغطية</h3>
+                        <h3 class="section-title">خيارات التغطية</h3>
                         <div class="radio-group">
                             <input type="radio" id="basic-coverage" name="coverage-type" value="basic" checked>
                             <label for="basic-coverage">التغطية الأساسية</label>
@@ -125,7 +166,7 @@
 
                     <!-- رياضات المقامرة -->
                     <div class="form-group">
-                        <h3 style="color: var(--secondary-blue); margin-bottom: 15px;">رياضات المقامرة</h3>
+                        <h3 class="section-title">رياضات المقامرة</h3>
                         <div class="radio-group">
                             <input type="radio" id="gambling-sports-yes" name="gambling-sports" value="yes">
                             <label for="gambling-sports-yes">نعم، أمارس رياضات المقامرة</label>
@@ -141,7 +182,7 @@
 
                     <!-- إضافة إضافية -->
                     <div class="form-group">
-                        <h3 style="color: var(--secondary-blue); margin-bottom: 15px;">إضافة إضافية</h3>
+                        <h3 class="section-title">إضافة إضافية</h3>
                         <div class="checkbox-group">
                             <input type="checkbox" id="additional-coverage" name="additional-coverage">
                             <label for="additional-coverage">إضافة تغطية إضافية</label>
@@ -153,7 +194,7 @@
 
                     <!-- نوع التأشيرة -->
                     <div class="form-group">
-                        <h3 style="color: var(--secondary-blue); margin-bottom: 15px;">نوع التأشيرة / البرنامج</h3>
+                        <h3 class="section-title">نوع التأشيرة / البرنامج</h3>
                         <div class="form-group">
                             <label for="visa-type">نوع التأشيرة *</label>
                             <select id="visa-type" name="visa-type" required>
@@ -185,37 +226,6 @@
                     </div>
                 </form>
             </div>
-
-            <!-- قسم المساعدة -->
-            <div class="help-section">
-                <h3 class="help-title">هل تحتاج إلى مساعدة؟</h3>
-                <div class="contact-options">
-                    <div class="contact-option">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <p>مباشر: +1 (904) 758-4391</p>
-                    </div>
-                    <div class="contact-option">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <p>بريد إلكتروني</p>
-                    </div>
-                    <div class="contact-option">
-                        <div class="contact-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <p>واتساب</p>
-                    </div>
-                    <div class="contact-option">
-                        <div class="contact-icon">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <p>محادثة</p>
-                    </div>
-                </div>
-            </div>
         </section>
     </main>
 
@@ -224,7 +234,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>أنواع التأمين</h3>
+                    <h3>تأمين</h3>
                     <ul>
                         <li><a href="#">التأمين الصحي للطلاب</a></li>
                         <li><a href="#">تأمين السفر الطبي</a></li>
@@ -233,7 +243,16 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>للشركاء</h3>
+                    <h3>الأفراد</h3>
+                    <ul>
+                        <li><a href="#">الطلاب</a></li>
+                        <li><a href="#">المعلمين</a></li>
+                        <li><a href="#">الباحثين</a></li>
+                        <li><a href="#">المتدربين</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>الشركاء</h3>
                     <ul>
                         <li><a href="#">الإداريين</a></li>
                         <li><a href="#">السمستر</a></li>
@@ -242,22 +261,21 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>الموارد</h3>
-                    <ul>
-                        <li><a href="#">مركز المعرفة</a></li>
-                        <li><a href="#">موارد</a></li>
-                        <li><a href="#">حول ISI</a></li>
-                        <li><a href="#">معلومات إضافية</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
                     <h3>اتصل بنا</h3>
-                    <ul>
-                        <li><a href="#">تعرف على الفريق</a></li>
-                        <li><a href="#">الأسئلة الشائعة</a></li>
-                        <li><a href="#">ابحث عن مدرستك</a></li>
-                        <li><a href="#">إدارة خطتي</a></li>
-                    </ul>
+                    <div class="contact-methods">
+                        <a href="https://wa.me/966580422371" class="contact-link whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            محادثة واتساب
+                        </a>
+                        <a href="tel:+966580422371" class="contact-link phone">
+                            <i class="fas fa-phone"></i>
+                            +966580422371
+                        </a>
+                        <a href="mailto:info@patriotexchange.com" class="contact-link email">
+                            <i class="fas fa-envelope"></i>
+                            تواصل معنا على البريد الإلكتروني
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -268,4 +286,4 @@
 
     <script src="script.js"></script>
 </body>
-</html>
+                                </html>
