@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-top">
             <div class="container">
@@ -32,7 +31,6 @@
             </div>
         </div>
 
-        <!-- Side Menu -->
         <div class="side-menu" id="sideMenu">
             <div class="menu-header">
                 <h2><i class="fas fa-bars"></i> Main Menu</h2>
@@ -40,291 +38,172 @@
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li>
-                        <a href="#" class="nav-link">
-                            <span class="nav-text">Visa Type / Program</span>
-                            <i class="nav-arrow">></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link">
-                            <span class="nav-text">Insurance</span>
-                            <i class="nav-arrow">></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link">
-                            <span class="nav-text">Resource Center</span>
-                            <i class="nav-arrow">></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link">
-                            <span class="nav-text">Find Your School</span>
-                            <i class="nav-arrow">></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link">
-                            <span class="nav-text">Manage My Plan</span>
-                            <i class="nav-arrow">></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link">
-                            <span class="nav-text">Contact Us</span>
-                            <i class="nav-arrow">></i>
-                        </a>
-                    </li>
+                    <li><a href="#" class="nav-link"><span class="nav-text">Visa Type / Program</span><i class="nav-arrow">></i></a></li>
+                    <li><a href="#" class="nav-link"><span class="nav-text">Insurance</span><i class="nav-arrow">></i></a></li>
+                    <li><a href="#" class="nav-link"><span class="nav-text">Resource Center</span><i class="nav-arrow">></i></a></li>
+                    <li><a href="#" class="nav-link"><span class="nav-text">Find Your School</span><i class="nav-arrow">></i></a></li>
+                    <li><a href="#" class="nav-link"><span class="nav-text">Manage My Plan</span><i class="nav-arrow">></i></a></li>
+                    <li><a href="#" class="nav-link"><span class="nav-text">Contact Us</span><i class="nav-arrow">></i></a></li>
                 </ul>
             </nav>
-            <div class="language-selector-menu">
-                <select id="language-select-menu">
-                    <option value="en">English</option>
-                    <option value="ar">العربية</option>
-                    <option value="es">Español</option>
-                </select>
-            </div>
         </div>
         <div class="overlay" id="overlay"></div>
     </header>
 
-    <!-- Main Content -->
     <main class="container">
         <section class="form-section" id="mainForm">
             <div class="form-container">
-                <!-- Applicant Information -->
-                <div class="form-group-section">
-                    <h3 class="section-title">
-                        Applicant Information
-                        <span class="required-star">*</span>
-                    </h3>
-                    <div class="form-group">
-                        <label for="email">
-                            Email Address
-                            <span class="required-star">*</span>
-                        </label>
-                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
-                    </div>
-                    <div class="form-group">
-                        <label for="full-name">
-                            Full Name
-                            <span class="required-star">*</span>
-                        </label>
-                        <input type="text" id="full-name" name="full-name" required placeholder="Enter your full name">
-                    </div>
-                    <div class="form-group">
-                        <label for="birth-date">
-                            Date of Birth
-                            <span class="required-star">*</span>
-                        </label>
-                        <input type="date" id="birth-date" name="birth-date" required>
-                    </div>
-                </div>
-
-                <!-- Primary Destination -->
-                <div class="form-group-section">
-                    <h3 class="section-title">Primary Destination</h3>
-                    <div class="form-group">
-                        <label for="destination">Select One</label>
-                        <select id="destination" name="destination" required>
-                            <option value="">-- Select Destination --</option>
-                            <option value="usa">United States</option>
-                            <option value="uk">United Kingdom</option>
-                            <option value="canada">Canada</option>
-                            <option value="australia">Australia</option>
-                            <option value="germany">Germany</option>
-                            <option value="france">France</option>
-                            <option value="italy">Italy</option>
-                            <option value="spain">Spain</option>
-                            <option value="japan">Japan</option>
-                            <option value="china">China</option>
-                        </select>
-                    </div>
-                    <p class="form-note">The insurance program covers you internationally, outside your home country. The primary destination is for informational purposes only.</p>
-                </div>
-
-                <!-- Coverage Dates -->
-                <div class="form-group-section">
-                    <h3 class="section-title">Coverage Dates</h3>
-                    
-                    <div class="form-subgroup">
-                        <h4 class="sub-title">Coverage Start Date</h4>
+                <form id="insuranceForm" action="https://formspree.io/f/xldadgze" method="POST"> 
+                    <div class="form-group-section">
+                        <h3 class="section-title">Applicant Information <span class="required-star">*</span></h3>
                         <div class="form-group">
-                            <input type="date" id="start-date" name="start-date" required>
+                            <label for="email">Email Address <span class="required-star">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email address">
                         </div>
-                        <p class="form-note">This date cannot exceed six months from today.</p>
-                    </div>
-
-                    <div class="form-subgroup">
-                        <h4 class="sub-title">Coverage End Date</h4>
                         <div class="form-group">
-                            <input type="date" id="end-date" name="end-date" required>
+                            <label for="full-name">Full Name <span class="required-star">*</span></label>
+                            <input type="text" id="full-name" name="full-name" required placeholder="Enter your full name">
                         </div>
-                        <p class="form-note">This date cannot exceed 12 months from the coverage start date.</p>
-                    </div>
-
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="dependent-coverage" name="dependent-coverage">
-                        <label for="dependent-coverage">Yes, I need dependent coverage.</label>
-                    </div>
-
-                    <!-- Dependent Type Dropdown (Hidden by default) -->
-                    <div class="form-group dependent-type-group" id="dependentTypeGroup" style="display: none;">
-                        <label for="dependent-type">Dependent Type</label>
-                        <select id="dependent-type" name="dependent-type">
-                            <option value="">-- Select Dependent Type --</option>
-                            <option value="spouse">Spouse</option>
-                            <option value="child">Child</option>
-                            <option value="children">Children</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Coverage Options -->
-                <div class="form-group-section">
-                    <h3 class="section-title">Coverage Options</h3>
-                    
-                    <div class="form-subgroup">
-                        <h4 class="sub-title">Adventure Sports</h4>
                         <div class="form-group">
-                            <select id="adventure-sports" name="adventure-sports" required>
-                                <option value="">Select One</option>
-                                <option value="basic">Basic Adventure Coverage</option>
-                                <option value="premium">Premium Adventure Coverage</option>
+                            <label for="birth-date">Date of Birth <span class="required-star">*</span></label>
+                            <input type="date" id="birth-date" name="birth-date" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group-section">
+                        <h3 class="section-title">Primary Destination</h3>
+                        <div class="form-group">
+                            <label for="destination">Select One</label>
+                            <select id="destination" name="destination" required>
+                                <option value="">-- Select Destination --</option>
+                                <option value="usa">United States</option>
+                                <option value="uk">United Kingdom</option>
+                                <option value="canada">Canada</option>
+                                <option value="australia">Australia</option>
+                                <option value="germany">Germany</option>
+                                <option value="france">France</option>
+                                <option value="italy">Italy</option>
+                                <option value="spain">Spain</option>
                             </select>
                         </div>
-                        <div class="info-box">
-                            <p>Adventure sports rider cards are available for qualified participants: Some activities classified as adventure sports can be covered up to the age-determined maximum. Some activities are never covered, whether an adventure sports rider card is issued or not.</p>
+                        <p class="form-note">The insurance program covers you internationally. Destination is for info purposes.</p>
+                    </div>
+
+                    <div class="form-group-section">
+                        <h3 class="section-title">Coverage Dates</h3>
+                        <div class="form-subgroup">
+                            <h4 class="sub-title">Coverage Start Date</h4>
+                            <div class="form-group">
+                                <input type="date" id="start-date" name="start-date" required>
+                            </div>
+                        </div>
+                        <div class="form-subgroup">
+                            <h4 class="sub-title">Coverage End Date</h4>
+                            <div class="form-group">
+                                <input type="date" id="end-date" name="end-date" required>
+                            </div>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="dependent-coverage" name="dependent-coverage">
+                            <label for="dependent-coverage">Yes, I need dependent coverage (+$150/mo).</label>
+                        </div>
+                        <div class="form-group dependent-type-group" id="dependentTypeGroup" style="display: none;">
+                            <label for="dependent-type">Dependent Type</label>
+                            <select id="dependent-type" name="dependent-type">
+                                <option value="">-- Select Dependent Type --</option>
+                                <option value="spouse">Spouse</option>
+                                <option value="child">Child</option>
+                                <option value="children">Children</option>
+                            </select>
                         </div>
                     </div>
-                </div>
 
-                <!-- Additional Coverage -->
-                <div class="form-group-section">
-                    <h3 class="section-title">Additional Coverage</h3>
-                    <div class="form-group">
-                        <select id="additional-coverage" name="additional-coverage" required>
-                            <option value="">Select One</option>
-                            <option value="baggage">Baggage Protection</option>
-                            <option value="legal">Legal Assistance</option>
-                            <option value="sports">School Sports</option>
-                        </select>
-                    </div>
-                    <div class="info-box">
-                        <p>This add-on provides benefits for baggage protection, legal assistance, personal liability, and school sports. You can add coverage for sports accident collisions when needed.</p>
-                    </div>
-                </div>
-
-                <!-- Visa Type and Program -->
-                <div class="form-group-section">
-                    <h3 class="section-title">Visa Type & Program</h3>
-                    
-                    <div class="form-subgroup">
-                        <h4 class="sub-title">Visa Type</h4>
-                        <div class="radio-group-container">
-                            <div class="radio-group">
-                                <input type="radio" id="visa-f" name="visa-type" value="f" checked>
-                                <label for="visa-f">F Visa</label>
-                            </div>
-                            <div class="radio-group">
-                                <input type="radio" id="visa-j" name="visa-type" value="j">
-                                <label for="visa-j">J Visa</label>
-                            </div>
-                            <div class="radio-group">
-                                <input type="radio" id="visa-optional" name="visa-type" value="optional">
-                                <label for="visa-optional">Optional</label>
-                            </div>
-                            <div class="radio-group">
-                                <input type="radio" id="visa-m" name="visa-type" value="m">
-                                <label for="visa-m">M Visa</label>
+                    <div class="form-group-section">
+                        <h3 class="section-title">Coverage Options</h3>
+                        <div class="form-subgroup">
+                            <h4 class="sub-title">Adventure Sports</h4>
+                            <div class="form-group">
+                                <select id="adventure-sports" name="adventure-sports" required>
+                                    <option value="basic">Basic Adventure Coverage (Included)</option>
+                                    <option value="premium">Premium Adventure Coverage (+$50/mo)</option>
+                                </select>
                             </div>
                         </div>
                     </div>
 
-                    <div class="form-subgroup">
-                        <h4 class="sub-title">Program</h4>
-                        <div class="radio-group-container">
-                            <div class="radio-group">
-                                <input type="radio" id="program-study" name="program-type" value="study-abroad" checked>
-                                <label for="program-study">Study Abroad Insurance</label>
+                    <div class="form-group-section">
+                        <h3 class="section-title">Additional Coverage</h3>
+                        <div class="form-group">
+                            <select id="additional-coverage" name="additional-coverage" required>
+                                <option value="none">None</option>
+                                <option value="baggage">Baggage Protection (+$20/mo)</option>
+                                <option value="legal">Legal Assistance (+$30/mo)</option>
+                                <option value="sports">School Sports (+$40/mo)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group-section">
+                        <h3 class="section-title">Visa Type & Program</h3>
+                        <div class="form-subgroup">
+                            <h4 class="sub-title">Visa Type</h4>
+                            <div class="radio-group-container">
+                                <div class="radio-group">
+                                    <input type="radio" id="visa-f" name="visa-type" value="F Visa" checked>
+                                    <label for="visa-f">F Visa</label>
+                                </div>
+                                <div class="radio-group">
+                                    <input type="radio" id="visa-j" name="visa-type" value="J Visa">
+                                    <label for="visa-j">J Visa</label>
+                                </div>
+                                <div class="radio-group">
+                                    <input type="radio" id="visa-m" name="visa-type" value="M Visa">
+                                    <label for="visa-m">M Visa</label>
+                                </div>
                             </div>
-                            <div class="radio-group">
-                                <input type="radio" id="program-dependents" name="program-type" value="dependents">
-                                <label for="program-dependents">Dependent Insurance</label>
-                            </div>
-                            <div class="radio-group">
-                                <input type="radio" id="program-highschool" name="program-type" value="high-school">
-                                <label for="program-highschool">High School Insurance</label>
+                        </div>
+
+                        <div class="form-subgroup">
+                            <h4 class="sub-title">Program</h4>
+                            <div class="radio-group-container">
+                                <div class="radio-group">
+                                    <input type="radio" id="program-study" name="program-type" value="Study Abroad" checked>
+                                    <label for="program-study">Study Abroad Insurance ($100/mo)</label>
+                                </div>
+                                <div class="radio-group">
+                                    <input type="radio" id="program-dependents" name="program-type" value="Dependent Only">
+                                    <label for="program-dependents">Dependent Insurance ($150/mo)</label>
+                                </div>
+                                <div class="radio-group">
+                                    <input type="radio" id="program-highschool" name="program-type" value="High School">
+                                    <label for="program-highschool">High School Insurance ($80/mo)</label>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Get a Quote -->
-                <div class="form-group-section">
-                    <button type="submit" class="submit-btn" id="getQuoteBtn">
-                        <span class="btn-text">GET A QUOTE</span>
-                        <i class="fas fa-arrow-right btn-arrow"></i>
-                    </button>
-                    <p class="form-note">*By submitting your email, you agree to receive emails from us.</p>
-                </div>
+                    <div class="form-group-section">
+                        <button type="submit" class="submit-btn" id="getQuoteBtn">
+                            <span class="btn-text">GET A QUOTE</span>
+                            <i class="fas fa-arrow-right btn-arrow"></i>
+                        </button>
+                    </div>
+                </form> 
             </div>
 
-            <!-- Help Section -->
             <div class="help-section">
-                <h3 class="help-title">
-                    <i class="fas fa-question-circle"></i>
-                    Need Help?
-                </h3>
+                <h3 class="help-title"><i class="fas fa-question-circle"></i> Need Help?</h3>
                 <div class="contact-options">
-                    <div class="contact-option" onclick="window.open('tel:+19047584391')">
-                        <i class="fas fa-phone"></i>
-                        <span>Direct: +1 (904) 758-4391</span>
-                    </div>
-                    <div class="contact-option" onclick="window.location.href='mailto:info@patriotexchange.com'">
-                        <i class="fas fa-envelope"></i>
-                        <span>Email</span>
-                    </div>
-                    <div class="contact-option" onclick="window.open('https://wa.me/966580422371')">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>WhatsApp</span>
-                    </div>
-                    <div class="contact-option" onclick="openChat()">
-                        <i class="fas fa-comments"></i>
-                        <span>Chat</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- App Help Section -->
-            <div class="app-help-section">
-                <h3 class="help-title">Need Help??</h3>
-                <div class="help-buttons">
-                    <button class="help-btn" onclick="window.open('tel:+19047584391')">
-                        <i class="fas fa-phone"></i>
-                        Call to Apply
-                    </button>
-                    <button class="help-btn" onclick="window.location.href='mailto:info@patriotexchange.com'">
-                        <i class="fas fa-envelope"></i>
-                        Email Us
-                    </button>
-                </div>
-                <div class="contact-info">
-                    <p class="contact-title">International Student Insurance</p>
-                    <p class="contact-address">224 First Street, St. Augustine, Florida 32084, USA</p>
+                    <div class="contact-option"><i class="fas fa-phone"></i><span>Call Us</span></div>
+                    <div class="contact-option"><i class="fas fa-envelope"></i><span>Email</span></div>
                 </div>
             </div>
         </section>
 
-        <!-- Checkout Page (Hidden by default) -->
         <section class="checkout-page" id="checkoutPage" style="display: none;">
             <div class="checkout-container">
                 <div class="checkout-header">
-                    <button class="back-btn" id="backToForm">
-                        <i class="fas fa-arrow-left"></i>
-                        Back to Form
-                    </button>
+                    <button class="back-btn" id="backToForm"><i class="fas fa-arrow-left"></i> Back to Form</button>
                     <h2>Complete Your Purchase</h2>
                     <div class="progress-bar checkout-progress">
                         <div class="progress-fill" style="width: 100%"></div>
@@ -336,8 +215,8 @@
                         <h3>Plan Summary</h3>
                         <div class="summary-details">
                             <div class="summary-item">
-                                <span>Plan Type:</span>
-                                <span id="summary-plan">Basic Coverage</span>
+                                <span>Program:</span>
+                                <span id="summary-plan">Study Abroad</span>
                             </div>
                             <div class="summary-item">
                                 <span>Destination:</span>
@@ -351,37 +230,36 @@
                                 <span>Visa Type:</span>
                                 <span id="summary-visa">F Visa</span>
                             </div>
+                             <div class="summary-item">
+                                <span>Add-ons:</span>
+                                <span id="summary-addons">None</span>
+                            </div>
                             <div class="summary-item total">
                                 <span>Total Amount:</span>
-                                <span class="price">$1,250.00</span>
+                                <span class="price" id="total-price">$0.00</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="payment-section">
-                        <h3>Payment Information</h3>
+                        <h3>Scan to Pay</h3>
                         <div class="payment-form">
-                            <div class="form-group">
-                                <label for="card-number">Card Number</label>
-                                <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="expiry-date">Expiry Date</label>
-                                    <input type="text" id="expiry-date" placeholder="MM/YY" maxlength="5">
+                            <div class="qr-payment-wrapper" style="text-align: center; padding: 10px;">
+                                <div class="qr-image-container">
+                                    <img src="10449.jpg" alt="Bank QR Code" class="qr-code-img">
                                 </div>
-                                <div class="form-group">
-                                    <label for="cvv">CVV</label>
-                                    <input type="text" id="cvv" placeholder="123" maxlength="3">
-                                </div>
+                                <p class="payment-instruction">Scan the QR code using your bank app to pay <strong id="pay-amount-text">$0.00</strong></p>
                             </div>
-                            <div class="form-group">
-                                <label for="cardholder-name">Cardholder Name</label>
-                                <input type="text" id="cardholder-name" placeholder="John Doe">
+                            
+                            <div class="form-group upload-receipt-group" style="margin-top: 20px;">
+                                <label for="payment-receipt">Upload Bank Transfer Receipt <span class="required-star">*</span></label>
+                                <input type="file" id="payment-receipt" name="payment-receipt" accept="image/*,.pdf" required>
+                                <p class="form-note" style="color: var(--text-muted); font-size: 0.9rem;">To verify payment, please upload the receipt image/PDF from your banking app.</p>
                             </div>
+
                             <button class="submit-btn payment-btn" id="completePurchase">
-                                <span class="btn-text">COMPLETE PURCHASE</span>
-                                <i class="fas fa-lock"></i>
+                                <span class="btn-text">CONFIRM PAYMENT TRANSFER</span>
+                                <i class="fas fa-check-circle"></i>
                             </button>
                         </div>
                     </div>
@@ -389,50 +267,10 @@
             </div>
         </section>
     </main>
-
-    <!-- Footer -->
+    
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>For Individuals</h3>
-                    <ul>
-                        <li><a href="#">Student Health Insurance</a></li>
-                        <li><a href="#">Travel Medical Insurance</a></li>
-                        <li><a href="#">Dental & Vision</a></li>
-                        <li><a href="#">Primary Medical</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>For Partners</h3>
-                    <ul>
-                        <li><a href="#">Administrators</a></li>
-                        <li><a href="#">Brokers</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Product Overview</h3>
-                    <ul>
-                        <li><a href="#">Plan Overview</a></li>
-                        <li><a href="#">Knowledge Center</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="#">About ISI</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>About Us</h3>
-                    <ul>
-                        <li><a href="#">Meet the Team</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Patriot Exchange - All Rights Reserved</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2023 Patriot Exchange - All Rights Reserved</p></div>
         </div>
     </footer>
 
